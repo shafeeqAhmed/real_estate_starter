@@ -2,10 +2,14 @@
   "name": "vuexy-vuetify-vuejs-admin-template",
   "version": "7.0.1",
   "scripts": {
-    "dev": "npm run build:icons && vite --host",
+    "dev": "npm run build:icons && vite --host && vite --watch",
     "build": "npm run build:icons && vite build",
     "lint": "eslint . -c .eslintrc.js --fix --ext .ts,.js,.vue,.tsx,.jsx",
-    "build:icons": "node resources/js/@iconify/build-icons.js"
+    "build:icons": "node resources/js/@iconify/build-icons.js",
+    "watch": "vite build --watch",
+    "preview": "vite preview"
+
+    
   },
   "dependencies": {
     "@casl/ability": "^6.2.0",
