@@ -1,20 +1,19 @@
-import axios from 'axios'
+import axios from "axios";
 
 const axiosIns = axios.create({
-// You can add your headers here
-// ================================
- baseURL: 'http://127.0.0.1:8000/',
-// timeout: 1000,
-// headers: {'X-Custom-Header': 'foobar'}
-})
-axiosIns.interceptors.request.use( function (config) {
-
-    const token = localStorage.getItem('accessToken');
-    const tokenType = "Bearer"
-    
+  // You can add your headers here
+  // ================================
+  baseURL: "https://future-estate.innovatorsolution.com/",
+  // timeout: 1000,
+  // headers: {'X-Custom-Header': 'foobar'}
+});
+axiosIns.interceptors.request.use(
+  function (config) {
+    const token = localStorage.getItem("accessToken");
+    const tokenType = "Bearer";
 
     if (token) {
-      config.headers['Authorization'] = `${tokenType} ${token}`;
+      config.headers["Authorization"] = `${tokenType} ${token}`;
     }
 
     return config;
@@ -25,4 +24,4 @@ axiosIns.interceptors.request.use( function (config) {
   }
 );
 
-export default axiosIns
+export default axiosIns;
